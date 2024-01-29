@@ -1,0 +1,64 @@
+[
+  {
+    "id": "new_process_process_folder_created_on_host",
+    "profile_predictor_config": {
+      "bootstrap.servers": "helk-kafka-broker:9092",
+      "topic": "profiling_predictor_new_process_process_folder_created_on_host",
+      "authen_type": "",
+      "keytab": "",
+      "principal": "",
+      "schema": {
+        "event_id": "STRING",
+        "event_uuid": "STRING",
+        "log_name": "STRING",
+        "user_name": "STRING",
+        "host_name": "STRING",
+        "process_command_line": "STRING",
+        "process_parent_command_line": "STRING",
+        "process_parent_name": "STRING",
+        "process_name": "STRING",
+        "process_path": "STRING",
+        "process_parent_path": "STRING",
+        "process_current_directory": "STRING",
+        "event_original_time": "STRING"
+      },
+      "timestamp_field": "event_original_time"
+    },
+    "rule_output_config": {
+      "bootstrap.servers": "helk-kafka-broker:9092",
+      "topic": "alert_sink"
+    },
+    "filter": "true"
+  },
+  {
+    "id": "rarity_process_created_on_host",
+    "profile_predictor_config": {
+      "bootstrap.servers": "helk-kafka-broker:9092",
+      "topic": "profiling_predictor_rarity_process_created_on_host",
+      "authen_type": "",
+      "keytab": "",
+      "principal": "",
+      "schema": {
+        "event_id": "STRING",
+        "event_uuid": "STRING",
+        "log_name": "STRING",
+        "user_name": "STRING",
+        "host_name": "STRING",
+        "process_command_line": "STRING",
+        "process_parent_command_line": "STRING",
+        "process_parent_name": "STRING",
+        "process_name": "STRING",
+        "process_path": "STRING",
+        "process_parent_path": "STRING",
+        "process_current_directory": "STRING",
+        "event_original_time": "STRING"
+      },
+      "timestamp_field": "event_original_time"
+    },
+    "rule_output_config": {
+      "bootstrap.servers": "helk-kafka-broker:9092",
+      "topic": "alert_sink"
+    },
+    "filter": "true"
+  }
+]

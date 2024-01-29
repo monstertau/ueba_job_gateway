@@ -1,0 +1,82 @@
+[
+  {
+    "id": "new_process_process_folder_created_on_host",
+    "profile_config": {
+      "name": "new_process_process_folder_created_on_host",
+      "status": 1,
+      "profile_type": "first_occurrence",
+      "entity": [
+        {
+          "field_name": "host_name",
+          "type": "original"
+        }
+      ],
+      "attribute": [
+        {
+          "field_name": "process_name",
+          "type": "original"
+        },
+        {
+          "field_name": "process_current_directory",
+          "type": "original"
+        }
+      ],
+      "profile_time": "4h",
+      "saving_duration_minute": 1,
+      "threshold": 1
+    },
+    "builder_source_config": {
+      "bootstrap.servers": "localhost:9092",
+      "topic": "profiling_sink_new_process_process_folder_created_on_host"
+    },
+    "predictor_source_config": {
+      "bootstrap.servers": "localhost:9092",
+      "topic": "behavior_sink_new_process_process_folder_created_on_host"
+    },
+    "output_config": {
+      "type": "kafka",
+      "config": {
+        "bootstrap.servers": "localhost:9092",
+        "topic": "profiling_predictor_new_process_process_folder_created_on_host"
+      }
+    }
+  },
+  {
+    "id": "rarity_process_created_on_host",
+    "profile_config": {
+      "name": "new_process_process_folder_created_on_host",
+      "status": 1,
+      "profile_type": "first_occurrence",
+      "entity": [
+        {
+          "field_name": "host_name",
+          "type": "original"
+        }
+      ],
+      "attribute": [
+        {
+          "field_name": "process_name",
+          "type": "original"
+        }
+      ],
+      "profile_time": "4h",
+      "saving_duration_minute": 1,
+      "threshold": 1
+    },
+    "builder_source_config": {
+      "bootstrap.servers": "localhost:9092",
+      "topic": "profiling_sink_rarity_process_created_on_host"
+    },
+    "predictor_source_config": {
+      "bootstrap.servers": "localhost:9092",
+      "topic": "behavior_sink_rarity_process_created_on_host"
+    },
+    "output_config": {
+      "type": "kafka",
+      "config": {
+        "bootstrap.servers": "localhost:9092",
+        "topic": "profiling_predictor_rarity_process_created_on_host"
+      }
+    }
+  }
+]

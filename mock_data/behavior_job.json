@@ -1,0 +1,112 @@
+[
+  {
+    "id": "new_process_process_folder_created_on_host",
+    "source_config": {
+      "bootstrap.servers": "helk-kafka-broker:9092",
+      "topic": "windows_event",
+      "authen_type": "",
+      "keytab": "",
+      "principal": "",
+      "schema": {
+        "event_id": "STRING",
+        "event_uuid": "STRING",
+        "log_name": "STRING",
+        "user_name": "STRING",
+        "host_name": "STRING",
+        "process_command_line": "STRING",
+        "process_parent_command_line": "STRING",
+        "process_parent_name": "STRING",
+        "process_name": "STRING",
+        "process_path": "STRING",
+        "process_parent_path": "STRING",
+        "process_current_directory": "STRING",
+        "event_original_time": "TIMESTAMP_LTZ"
+      },
+      "timestamp_field": "event_original_time"
+    },
+    "profile_config": {
+      "name": "new_process_process_folder_created_on_host",
+      "status": 1,
+      "profile_type": "first_occurrence",
+      "entity": [
+        {
+          "field_name": "host_name",
+          "type": "original"
+        }
+      ],
+      "attribute": [
+        {
+          "field_name": "process_name",
+          "type": "original"
+        },
+        {
+          "field_name": "process_current_directory",
+          "type": "original"
+        }
+      ],
+      "profile_time": "4h",
+      "saving_duration_minute": 1,
+      "threshold": 1
+    },
+    "profile_output_config": {
+      "bootstrap.servers": "helk-kafka-broker:9092"
+    },
+    "behavior_output_config": {
+      "bootstrap.servers": "helk-kafka-broker:9092"
+    },
+    "filter": "log_name LIKE '%Sysmon%' AND event_id = '1'"
+  },
+  {
+    "id": "rarity_process_created_on_host",
+    "source_config": {
+      "bootstrap.servers": "helk-kafka-broker:9092",
+      "topic": "windows_event",
+      "authen_type": "",
+      "keytab": "",
+      "principal": "",
+      "schema": {
+        "event_id": "STRING",
+        "event_uuid": "STRING",
+        "log_name": "STRING",
+        "user_name": "STRING",
+        "host_name": "STRING",
+        "process_command_line": "STRING",
+        "process_parent_command_line": "STRING",
+        "process_parent_name": "STRING",
+        "process_name": "STRING",
+        "process_path": "STRING",
+        "process_parent_path": "STRING",
+        "process_current_directory": "STRING",
+        "event_original_time": "TIMESTAMP_LTZ"
+      },
+      "timestamp_field": "event_original_time"
+    },
+    "profile_config": {
+      "name": "rarity_process_created_on_host",
+      "status": 1,
+      "profile_type": "first_occurrence",
+      "entity": [
+        {
+          "field_name": "host_name",
+          "type": "original"
+        }
+      ],
+      "attribute": [
+        {
+          "field_name": "process_name",
+          "type": "original"
+        }
+      ],
+      "profile_time": "4h",
+      "saving_duration_minute": 1,
+      "threshold": 1
+    },
+    "profile_output_config": {
+      "bootstrap.servers": "helk-kafka-broker:9092"
+    },
+    "behavior_output_config": {
+      "bootstrap.servers": "helk-kafka-broker:9092"
+    },
+    "filter": "log_name LIKE '%Sysmon%' AND event_id = '1'"
+  }
+]
