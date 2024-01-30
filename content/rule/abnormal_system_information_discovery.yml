@@ -1,0 +1,8 @@
+id: abnormal_system_information_discovery
+name: "[Mitre ATT&CK T1082] Abnormal System Information Discovery"
+technique: T1082
+profile_id: rare_process_created_on_host
+filter: REGEXP(process_name,'(?i)(systeminfo|nbtstat|tasklist|quser|qwinsta|dsquery|gpresult|vssadmin|fsutil|hostname|whoami)')
+severity: low
+risk_score: 5
+object: host_name

@@ -1,0 +1,8 @@
+id: abnormal_data_exfiltration_over_c2
+name: "[Mitre ATT&CK T1041] Abnormal Data Exfiltration Over C2 Channel"
+technique: T1041
+profile_id: rare_network_connection_on_host
+filter: "dst_ip_type = 'private'"
+object: host_name
+severity: high
+risk_score: 50

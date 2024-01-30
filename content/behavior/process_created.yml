@@ -1,0 +1,20 @@
+id: process_created_sysmon
+name: Microsoft Sysmon - Process Created
+mitre_data_source_id: DS0009
+source_id: windows_event
+filter: log_name LIKE '%Sysmon%' AND event_id = '1'
+schema:
+  "event_id": "STRING"
+  "event_uuid": "STRING"
+  "log_name": "STRING"
+  "user_name": "STRING"
+  "host_name": "STRING"
+  "process_command_line": "STRING"
+  "process_parent_command_line": "STRING"
+  "process_parent_name": "STRING"
+  "process_name": "STRING"
+  "process_path": "STRING"
+  "process_parent_path": "STRING"
+  "process_current_directory": "STRING"
+  "event_original_time": "TIMESTAMP_LTZ"
+timestamp_field: "event_original_time"

@@ -1,0 +1,5 @@
+id: windows_event
+type: kafka
+config:
+  bootstrap.servers: helk-kafka-broker:9092
+  topic: windows_event

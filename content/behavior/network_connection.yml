@@ -1,0 +1,15 @@
+id: network_connection_sysmon
+name: Microsoft Sysmon - Network Connection
+mitre_data_source_id: DS0029
+source_id: windows_event
+filter: log_name LIKE '%Sysmon%' AND event_id = '3'
+schema:
+  "event_id": "STRING"
+  "event_uuid": "STRING"
+  "log_name": "STRING"
+  "host_name": "STRING"
+  "dst_ip_addr": "STRING"
+  "dst_port": "STRING"
+  "dst_ip_type": "STRING"
+  "event_original_time": "TIMESTAMP_LTZ"
+timestamp_field: "event_original_time"

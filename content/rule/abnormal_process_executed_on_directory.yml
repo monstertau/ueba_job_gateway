@@ -1,0 +1,9 @@
+id: abnormal_process_executed_on_directory
+name: "[Mitre ATT&CK T1204.002] Abnormal Process Executed on a Directory"
+technique: T1204.002
+profile_id: new_process_process_folder_created_on_host
+filter: true
+severity: medium
+risk_score: 15
+object: host_name
+

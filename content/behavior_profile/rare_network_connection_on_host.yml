@@ -1,0 +1,14 @@
+id: rare_network_connection_on_host
+name: Rare Network Connection on Host
+behavior_id: network_connection_sysmon
+status: 1
+profile_type: rarity
+entities:
+  - field_name: host_name
+    type: original
+attributes:
+  - field_name: dst_ip_addr
+    type: original
+profile_time: 4h
+saving_duration_minute: 1
+threshold: 0.9
